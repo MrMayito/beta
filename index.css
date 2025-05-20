@@ -1,0 +1,360 @@
+﻿:root {
+    --font-primary: 'Montserrat', sans-serif;
+    --primary-color: #7B2BC3; /* Púrpura principal */
+    --secondary-color: #329FA8; /* Turquesa secundario */
+    --dark-text: #494940; /* Texto oscuro */
+    --light-bg: #E2E4E2; /* Fondo gris claro */
+    --pure-white: #FFFFFF;
+    --pure-black: #000000;
+}
+
+/* Estilos Header */
+.header-inmobiliaria {
+    background: var(--primary-color);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--light-bg);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--pure-white);
+}
+
+.header-contacto p {
+    color: var(--light-bg);
+    font-weight: 600;
+    margin: 0;
+    padding: 8px 15px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+/* Carrusel */
+.carrusel {
+    margin-top: 80px;
+    padding: 20px 0;
+    position: relative;
+}
+
+.slider-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(50, 159, 168, 0.1);
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 14px;
+}
+
+/* Puntos de navegación */
+.puntos-navegacion {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 20px;
+    background: rgba(50, 159, 168, 0.15);
+}
+
+.puntos-navegacion .punto {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(50, 159, 168, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.puntos-navegacion .punto.activo {
+    background: var(--secondary-color);
+    transform: scale(1.3);
+}
+
+/* Descripción del terreno */
+.descripcion-terreno {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    background: rgba(226, 228, 226, 0.95);
+    padding: 2rem;
+    max-width: 400px;
+    z-index: 100;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 2px solid var(--secondary-color);
+}
+
+.descripcion-terreno h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    position: relative;
+}
+
+.descripcion-terreno h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--secondary-color);
+}
+
+.detalles-terreno p {
+    color: var(--dark-text);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.detalles-terreno strong {
+    color: var(--primary-color);
+    min-width: 100px;
+}
+
+/* Botones */
+.boton-consulta {
+    background: var(--secondary-color);
+    color: var(--pure-white);
+    border: 2px solid var(--primary-color);
+    padding: 12px 30px;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.boton-consulta:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(123, 43, 195, 0.3);
+}
+
+.boton-regresar {
+    background-color: var(--dark-text);
+    color: var(--pure-white);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.boton-regresar:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(123, 43, 195, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .slide img {
+        height: 400px;
+    }
+    
+    .descripcion-terreno {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        width: 90%;
+        margin: -60px auto 30px;
+        border: 1px solid var(--secondary-color);
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide img {
+        height: 300px;
+        border-radius: 8px;
+    }
+    
+    .puntos-navegacion {
+        bottom: 15px;
+        padding: 8px;
+    }
+    
+    .puntos-navegacion .punto {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .detalles-terreno p {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .boton-consulta {
+        width: 100%;
+    }
+}
+
+/* Estilos del Footer */
+.footer-inmobiliaria {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 40px 0 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.footer-description {
+    font-size: 0.9em;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.footer-section h4 {
+    color: #e67e22;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.footer-links li,
+.footer-contacto li {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.footer-links a,
+.footer-contacto li {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+    .footer-links a:hover {
+        color: #e67e22;
+    }
+
+.social-media {
+    display: flex;
+    gap: 15px;
+}
+
+    .social-media img {
+        width: 32px;
+        height: 32px;
+        transition: transform 0.3s;
+    }
+
+        .social-media img:hover {
+            transform: scale(1.1);
+        }
+
+.copyright {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #34495e;
+    font-size: 0.8em;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-links,
+    .footer-contacto {
+        justify-content: center;
+    }
+
+    .social-media {
+        justify-content: center;
+    }
+}
